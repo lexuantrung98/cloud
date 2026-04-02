@@ -1,0 +1,391 @@
+/**
+ * Shared Component Styles
+ * Atlassian/Jira Design System
+ * Usage: import styles from './shared-components.module.css'
+ */
+
+/* ========================================
+   BUTTON COMPONENTS
+   ======================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-normal);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary Button (Atlassian Blue) */
+.buttonPrimary {
+  composes: button;
+  background: var(--color-primary);
+  color: white;
+}
+
+.buttonPrimary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.buttonPrimary:active {
+  background: var(--color-primary-dark);
+}
+
+/* Secondary Button (Subtle) */
+.buttonSecondary {
+  composes: button;
+  background: var(--color-gray-100);
+  color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-300);
+}
+
+.buttonSecondary:hover:not(:disabled) {
+  background: var(--color-gray-200);
+}
+
+/* Danger Button */
+.buttonDanger {
+  composes: button;
+  background: transparent;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+}
+
+.buttonDanger:hover:not(:disabled) {
+  background: var(--color-danger);
+  color: white;
+}
+
+/* Link Button (No background) */
+.buttonLink {
+  composes: button;
+  background: transparent;
+  color: var(--color-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+.buttonLink:hover:not(:disabled) {
+  background: var(--color-gray-100);
+}
+
+/* Icon Button */
+.buttonIcon {
+  composes: button;
+  padding: var(--spacing-xs);
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  color: var(--color-gray-700);
+}
+
+.buttonIcon:hover:not(:disabled) {
+  background: var(--color-gray-100);
+}
+
+/* ========================================
+   CARD COMPONENTS
+   ======================================== */
+
+.card {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-200);
+}
+
+.cardHoverable {
+  composes: card;
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.cardHoverable:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.cardTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  margin: 0;
+}
+
+.cardBody {
+  color: var(--color-gray-700);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ========================================
+   INPUT COMPONENTS
+   ======================================== */
+
+.input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-normal);
+  transition: border-color var(--transition-fast);
+  background: white;
+  color: var(--color-gray-900);
+}
+
+.input:hover {
+  border-color: var(--color-gray-400);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.input:disabled {
+  background: var(--color-gray-100);
+  cursor: not-allowed;
+}
+
+.inputError {
+  composes: input;
+  border-color: var(--color-danger);
+}
+
+.inputError:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 1px var(--color-danger);
+}
+
+/* Textarea */
+.textarea {
+  composes: input;
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Select */
+.select {
+  composes: input;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B778C' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-sm) center;
+  padding-right: var(--spacing-xl);
+}
+
+/* ========================================
+   BADGE COMPONENTS
+   ======================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.badgePrimary {
+  composes: badge;
+  background: var(--color-info-light);
+  color: var(--color-info-dark);
+}
+
+.badgeSuccess {
+  composes: badge;
+  background: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+
+.badgeWarning {
+  composes: badge;
+  background: var(--color-warning-light);
+  color: var(--color-warning-dark);
+}
+
+.badgeDanger {
+  composes: badge;
+  background: var(--color-danger-light);
+  color: var(--color-danger-dark);
+}
+
+.badgeGray {
+  composes: badge;
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+/* ========================================
+   TABLE COMPONENTS
+   ======================================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.tableHeader {
+  background: var(--color-gray-100);
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.tableHeaderCell {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background var(--transition-fast);
+}
+
+.tableRow:hover {
+  background: var(--color-gray-50);
+}
+
+.tableCell {
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  color: var(--color-gray-700);
+}
+
+/* ========================================
+   FORM COMPONENTS
+   ======================================== */
+
+.formGroup {
+  margin-bottom: var(--spacing-lg);
+}
+
+.label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+}
+
+.helperText {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.errorText {
+  composes: helperText;
+  color: var(--color-danger);
+}
+
+/* ========================================
+   GRID LAYOUTS
+   ======================================== */
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.gridCols2 {
+  composes: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gridCols3 {
+  composes: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gridCols4 {
+  composes: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .gridCols3,
+  .gridCols4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .gridCols2,
+  .gridCols3,
+  .gridCols4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.textCenter {
+  text-align: center;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gap {
+  gap: var(--spacing-md);
+}
+
+.gapSm {
+  gap: var(--spacing-sm);
+}
+
+.gapLg {
+  gap: var(--spacing-lg);
+}

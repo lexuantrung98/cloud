@@ -1,0 +1,283 @@
+/**
+ * Subjects Page Styles
+ * Atlassian Design System
+ * Head Department - Subjects list & syllabuses detail view
+ */
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+
+.pageHeader {
+  margin-bottom: var(--spacing-xl);
+}
+
+.pageTitle {
+  font-size: var(--font-size-3xl);
+  margin: 0;
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-semibold);
+}
+
+.pageSubtitle {
+  color: var(--color-gray-600);
+  margin: 5px 0 0 0;
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   BACK BUTTON
+   ======================================== */
+
+.backButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-bottom: var(--spacing-md);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+}
+
+.backButton:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--color-gray-900);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.badge {
+  padding: 6px 12px;
+  background: var(--color-info-light);
+  color: var(--color-info-dark);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ========================================
+   SUBJECT GRID
+   ======================================== */
+
+.subjectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.subjectCard {
+  padding: var(--spacing-lg);
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.subjectCard:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(102,126,234,0.15);
+  transform: translateY(-2px);
+}
+
+.subjectCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+}
+
+.codeBadge {
+  padding: 6px 12px;
+  background: var(--color-info-light);
+  color: var(--color-info-dark);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.creditsBadge {
+  padding: 6px 12px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.subjectTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 8px 0;
+  color: var(--color-gray-900);
+}
+
+.subjectDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.subjectAction {
+  margin-top: var(--spacing-sm);
+  padding: 6px 12px;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ========================================
+   SYLLABUS LIST
+   ======================================== */
+
+.syllabusGrid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.syllabusItem {
+  padding: var(--spacing-lg);
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all var(--transition-base);
+}
+
+.syllabusItem:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.syllabusInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.syllabusIcon {
+  width: 48px;
+  height: 48px;
+  background: var(--color-info-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.syllabusDetails h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+}
+
+.syllabusDetails p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-gray-600);
+}
+
+.downloadButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-success);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.downloadButton:hover {
+  background: var(--color-success-dark);
+}
+
+/* ========================================
+   EMPTY STATES
+   ======================================== */
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  color: var(--color-gray-600);
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyStateTitle {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.emptyStateText {
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   STATS CARD
+   ======================================== */
+
+.statsCard {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  border: 1px solid #e0f2fe;
+}
+
+.statsText {
+  color: #0369a1;
+  font-size: var(--font-size-base);
+  margin: 0;
+}

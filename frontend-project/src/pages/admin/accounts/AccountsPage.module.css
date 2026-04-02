@@ -1,0 +1,399 @@
+/**
+ * Admin Accounts Page Styles
+ * Atlassian Design System
+ */
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: var(--font-size-3xl);
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-semibold);
+}
+
+.pageSubtitle {
+  color: var(--color-gray-600);
+  margin: var(--spacing-xs) 0 0 0;
+  font-size: var(--font-size-base);
+}
+
+.createButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
+}
+
+.createButton:hover {
+  background: var(--color-primary-hover);
+}
+
+/* ========================================
+   FILTER CARD
+   ======================================== */
+
+.filterCard {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--color-gray-200);
+}
+
+.filterLabel {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  font-size: var(--font-size-base);
+}
+
+.filterSelect {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  background: white;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.filterSelect:hover {
+  border-color: var(--color-gray-400);
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* ========================================
+   TABLE CARD
+   ======================================== */
+
+.tableCard {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-gray-200);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.tableHeaderCell {
+  padding: var(--spacing-sm);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tableHeaderCell.alignRight {
+  text-align: right;
+}
+
+
+
+.tableRow {
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background var(--transition-fast);
+}
+
+.tableRow:hover {
+  background: var(--color-gray-50);
+}
+
+.tableCell {
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  color: var(--color-gray-700);
+}
+
+.tableCell.alignRight {
+  text-align: right;
+}
+
+.tableCellName {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-900);
+}
+
+/* ========================================
+   BADGES
+   ======================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badgeRole {
+  composes: badge;
+  background: var(--color-info-light);
+  color: var(--color-info-dark);
+}
+
+.badgeActive {
+  composes: badge;
+  background: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+
+.badgeInactive {
+  composes: badge;
+  background: var(--color-danger-light);
+  color: var(--color-danger-dark);
+}
+
+/* ========================================
+   ACTION BUTTONS
+   ======================================== */
+
+.actionButtons {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}
+
+.actionButton {
+  padding: 6px var(--spacing-sm);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.buttonDeactivate {
+  composes: actionButton;
+  background: var(--color-warning);
+  color: white;
+}
+
+.buttonDeactivate:hover:not(:disabled) {
+  background: var(--color-warning-dark);
+}
+
+.buttonActivate {
+  composes: actionButton;
+  background: var(--color-success);
+  color: white;
+}
+
+.buttonActivate:hover {
+  background: var(--color-success-dark);
+}
+
+.buttonDelete {
+  composes: actionButton;
+  background: var(--color-danger);
+  color: white;
+}
+
+.buttonDelete:hover:not(:disabled) {
+  background: var(--color-danger-dark);
+}
+
+.actionButton:disabled {
+  background: var(--color-gray-300);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ========================================
+   MODAL
+   ======================================== */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+}
+
+.modalContent {
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-sm);
+  width: 500px;
+  max-width: 90vw;
+  box-shadow: var(--shadow-xl);
+}
+
+.modalTitle {
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-2xl);
+  color: var(--color-gray-900);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md);
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  font-size: var(--font-size-base);
+}
+
+.formInput {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  transition: border-color var(--transition-fast);
+}
+
+.formInput:hover {
+  border-color: var(--color-gray-400);
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+.formSelect {
+  composes: formInput;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B778C' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-sm) center;
+  padding-right: var(--spacing-xl);
+  cursor: pointer;
+}
+
+.modalActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+}
+
+.buttonCancel {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: white;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.buttonCancel:hover {
+  background: var(--color-gray-100);
+}
+
+.buttonSave {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.buttonSave:hover {
+  background: var(--color-primary-hover);
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.loading {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-gray-600);
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .createButton {
+    width: 100%;
+  }
+  
+  .modalContent {
+    width: 100%;
+    margin: var(--spacing-md);
+  }
+  
+  .tableCard {
+    padding: var(--spacing-md);
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .actionButton {
+    width: 100%;
+  }
+}

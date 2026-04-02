@@ -1,0 +1,596 @@
+/**
+ * Dept Head Dashboard Styles  
+ * Atlassian Design System
+ * Head Department - Project management dashboard
+ */
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+
+.pageHeader {
+  margin-bottom: var(--spacing-xl);
+}
+
+.pageTitle {
+  font-size: var(--font-size-3xl);
+  margin: 0;
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-semibold);
+}
+
+.pageSubtitle {
+  color: var(--color-gray-600);
+  margin: 5px 0 0 0;
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   STATS CARDS
+   ======================================== */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.statCard.pending {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+}
+
+.statCard.approved {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.statCard.rejected {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+}
+
+.statLabel {
+  font-size: 13px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.statCard .statLabel {
+  color: var(--color-gray-600);
+}
+
+.statCard.pending .statLabel {
+  color: #d48806;
+}
+
+.statCard.approved .statLabel {
+  color: #389e0d;
+}
+
+.statCard.rejected .statLabel {
+  color: #cf1322;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+}
+
+.statCard .statValue {
+  color: var(--color-gray-900);
+}
+
+.statCard.pending .statValue {
+  color: #faad14;
+}
+
+.statCard.approved .statValue {
+  color: #52c41a;
+}
+
+.statCard.rejected .statValue {
+  color: #ff4d4f;
+}
+
+/* ========================================
+   FILTER TABS
+   ======================================== */
+
+.filterTabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.filterTab {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: white;
+  color: var(--color-gray-600);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.filterTab.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.filterTab:hover:not(.active) {
+  background: var(--color-gray-100);
+}
+
+/* ========================================
+   PROJECT CARDS
+   ======================================== */
+
+.projectGrid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.projectCard {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--color-gray-300);
+}
+
+.projectCard.pending {
+  border-left-color: #faad14;
+}
+
+.projectCard.approved {
+  border-left-color: #52c41a;
+}
+
+.projectCard.rejected {
+  border-left-color: #ff4d4f;
+}
+
+.projectCardContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectInfo {
+  flex: 1;
+}
+
+.projectHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.projectMeta {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.projectTitle {
+  margin: 0 0 8px 0;
+  color: var(--color-gray-900);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.projectDescription {
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+/* ========================================
+   CLASS ASSIGNMENTS
+   ======================================== */
+
+.classAssignments {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.classLabel {
+  font-size: 13px;
+  color: var(--color-gray-600);
+}
+
+.classBadge {
+  background: #f6ffed;
+  border: 1px solid #52c41a;
+  color: #52c41a;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.addClassButton {
+  font-size: var(--font-size-sm);
+  color: #389e0d;
+  background: transparent;
+  border: 1px dashed #389e0d;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.addClassButton:hover {
+  background: #f6ffed;
+}
+
+/* ========================================
+   ACTION BUTTONS
+   ======================================== */
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-left: var(--spacing-lg);
+}
+
+.actionButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: 13px;
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.viewDetailButton {
+  composes: actionButton;
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.viewDetailButton:hover {
+  background: #bae7ff;
+}
+
+.approveButton {
+  composes: actionButton;
+  background: #52c41a;
+  color: white;
+}
+
+.approveButton:hover {
+  background: #389e0d;
+}
+
+.rejectButton {
+  composes: actionButton;
+  background: white;
+  border: 1px solid #ff4d4f;
+  color: #ff4d4f;
+}
+
+.rejectButton:hover {
+  background: #fff1f0;
+}
+
+/* ========================================
+   MODAL
+   ======================================== */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-modal);
+}
+
+.modalContent {
+  background: white;
+  width: 700px;
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xl);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding-bottom: var(--spacing-md);
+}
+
+.modalTitle {
+  margin: 0;
+  color: var(--color-gray-900);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gray-600);
+  padding: 0;
+}
+
+.modalBody {
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 5px;
+}
+
+.infoGrid {
+  background: var(--color-gray-50);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.infoItem {
+}
+
+.infoLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.infoValue {
+  font-weight: var(--font-weight-semibold);
+  font-size: 15px;
+  color: var(--color-gray-900);
+}
+
+.section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.sectionTitle {
+  margin: 0 0 10px 0;
+  color: var(--color-gray-900);
+  font-size: 15px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.descriptionBox {
+  line-height: 1.7;
+  color: var(--color-gray-700);
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin: 0;
+}
+
+.milestoneList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.milestoneItem {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  background: white;
+  gap: var(--spacing-md);
+}
+
+.milestoneIcon {
+  background: #e6f7ff;
+  padding: var(--spacing-sm);
+  border-radius: 50%;
+  color: #1890ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.milestoneDetails {
+  flex: 1;
+}
+
+.milestoneTitle {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: 4px;
+}
+
+.milestoneDescription {
+  font-size: 13px;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.milestoneDeadline {
+  text-align: right;
+}
+
+.milestoneDeadlineLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.milestoneDeadlineValue {
+  font-weight: var(--font-weight-semibold);
+  color: #e67e22;
+}
+
+.modalFooter {
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+/* ========================================
+   CLASS MODAL
+   ======================================== */
+
+.classModalContent {
+  composes: modalContent;
+  width: 500px;
+}
+
+.classModalTitle {
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--color-gray-900);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.classModalText {
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-lg);
+}
+
+.classSelect {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-family-base);
+}
+
+.classModalActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-gray-100);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-family-base);
+}
+
+.submitButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: #389e0d;
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+}
+
+.submitButton:disabled {
+  background: var(--color-gray-300);
+  cursor: not-allowed;
+}
+
+/* ========================================
+   EMPTY STATES
+   ======================================== */
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  color: var(--color-gray-600);
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyStateTitle {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+/*  ========================================
+    STATUS BADGES
+    ======================================== */
+
+.statusBadge {
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+}
+
+.statusBadge.pending {
+  background: #faad14;
+  color: white;
+}
+
+.statusBadge.approved {
+  background: #52c41a;
+  color: white;
+}
+
+.statusBadge.rejected {
+  background: #ff4d4f;
+  color: white;
+}

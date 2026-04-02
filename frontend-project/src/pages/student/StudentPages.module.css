@@ -1,0 +1,479 @@
+/**
+ * Shared Student Pages Styles
+ * Atlassian Design System
+ * Copied from LecturerPages for Student pages
+ */
+
+/* ========================================
+   PAGE HEADERS
+   ======================================== */
+
+.pageHeader {
+  margin-bottom: var(--spacing-xl);
+}
+
+.pageHeaderWithActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.pageTitle {
+  font-size: var(--font-size-3xl);
+  margin: 0;
+  color: var(--color-gray-900);
+}
+
+.pageSubtitle {
+  color: var(--color-gray-600);
+  margin: 5px 0 0 0;
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.backButton {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.backButton:hover {
+  background: rgba(103, 126, 234, 0.08);
+}
+
+.primaryButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.primaryButton:hover {
+  background: var(--color-primary-dark);
+}
+
+.successButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-success);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.successButton:hover {
+  background: var(--color-success-dark);
+}
+
+.infoButton {
+  padding: 6px 12px;
+  background: #1890ff;
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.infoButton:hover {
+  background: #1070d0;
+}
+
+.joinButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-success);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.joinButton:hover {
+  background: var(--color-success-dark);
+}
+
+.joinButton:disabled {
+  background: #d9d9d9;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.classCard {
+  padding: var(--spacing-md);
+  background: #fafafa;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.classCard:hover {
+  border-color: var(--color-primary);
+  background: #f5f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.classCardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.classCardLeft {
+  flex: 1;
+}
+
+.classCardMeta {
+  margin-bottom: 8px;
+}
+
+.classCardTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 8px 0;
+  color: var(--color-gray-900);
+}
+
+.classCardSubject {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.classCardRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========================================
+   BADGES
+   ======================================== */
+
+.badge {
+  padding: 4px 10px;
+  background: #e7f3ff;
+  color: #1890ff;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  margin-right: 8px;
+}
+
+.badgeCode {
+  padding: 4px 8px;
+  background: #e7f3ff;
+  color: #1890ff;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.badgePill {
+  padding: 8px 16px;
+  background: #f0f9ff;
+  color: var(--color-primary);
+  border-radius: 20px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.badgeView {
+  padding: 6px 12px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ========================================
+   INFO BOX
+   ======================================== */
+
+.infoBox {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: #f0f9ff;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e0f2fe;
+  margin-top: var(--spacing-md);
+}
+
+.infoBoxText {
+  color: #0369a1;
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+/* ========================================
+   TABLES
+   ======================================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.tableHeaderCell {
+  padding: var(--spacing-sm);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+}
+
+.tableHeaderCell.alignRight {
+  text-align: right;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.tableCell {
+  padding: var(--spacing-sm);
+  color: var(--color-gray-700);
+}
+
+.tableCell.bold {
+  font-weight: var(--font-weight-medium);
+}
+
+.tableCell.alignRight {
+  text-align: right;
+}
+
+/* ========================================
+   GRID LAYOUTS
+   ======================================== */
+
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+/* ========================================
+   EMPTY STATES
+   ======================================== */
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-md);
+  color: var(--color-gray-500);
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyStateTitle {
+  font-size: var(--font-size-base);
+  margin-bottom: 10px;
+}
+
+.emptyStateText {
+  font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+
+.loading {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-md);
+  color: var(--color-gray-500);
+}
+
+.loadingText {
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   SECTION HEADERS
+   ======================================== */
+
+.sectionTitle {
+  font-size: var(--font-size-xl);
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-gray-900);
+}
+
+/* ========================================
+   MODALS & FORMS
+   ======================================== */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+}
+
+.modal {
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-sm);
+  width: 500px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modalTitle {
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-gray-900);
+  font-size: var(--font-size-2xl);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md);
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  resize: vertical;
+  min-height: 100px;
+}
+
+.select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+}
+
+.modalActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+  margin-top: var(--spacing-lg);
+}
+
+.cancelButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: white;
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+}
+
+.saveButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .pageHeaderWithActions {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .classCardContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .classCardRight {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

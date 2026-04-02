@@ -1,0 +1,290 @@
+/**
+ * Student Layout Styles
+ * Atlassian Design System  
+ * Copied from LecturerLayout for Student branding
+ */
+
+/* ========================================
+   LAYOUT CONTAINER
+   ======================================== */
+
+.layoutContainer {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-gray-50);
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   SIDEBAR
+   ======================================== */
+
+.sidebar {
+  width: 280px;
+  background: white;
+  color: var(--color-gray-900);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  transition: transform var(--transition-base);
+}
+
+/* Mobile Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* ========================================
+   SIDEBAR HEADER
+   ======================================== */
+
+.sidebarHeader {
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.logoTitle {
+  margin: 0;
+  color: var(--color-gray-900);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.logoSubtitle {
+  margin: 5px 0 0 0;
+  color: var(--color-gray-500);
+  font-size: var(--font-size-xs);
+}
+
+/* ========================================
+   USER INFO CARD
+   ======================================== */
+
+.userInfo {
+  padding: var(--spacing-md) var(--spacing-md);
+  background: #f5f7fa;
+  margin: var(--spacing-md) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gray-200);
+}
+
+.userRole {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 4px;
+  color: var(--color-primary);
+}
+
+.userName {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-700);
+  margin-top: 4px;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.navContainer {
+  flex: 1;
+  padding: 0 var(--spacing-sm);
+  overflow-y: auto;
+}
+
+.navSection {
+  margin-bottom: var(--spacing-lg);
+}
+
+.navSectionTitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  padding: var(--spacing-sm) var(--spacing-sm);
+  margin: var(--spacing-sm) 0 var(--spacing-xs) 0;
+  letter-spacing: 1px;
+  font-weight: var(--font-weight-bold);
+}
+
+.navLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navItem {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: transparent;
+  color: var(--color-gray-700);
+  border-radius: var(--radius-sm);
+  font-weight: normal;
+  cursor: pointer;
+  margin-bottom: 4px;
+  transition: all var(--transition-base);
+  font-size: var(--font-size-sm);
+  border-left: 3px solid transparent;
+}
+
+.navItem:hover {
+  background: rgba(103, 126, 234, 0.08);
+}
+
+.navItemActive {
+  background: rgba(103, 126, 234, 0.15);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  border-left-color: var(--color-primary);
+}
+
+/* ========================================
+   LOGOUT BUTTON
+   ======================================== */
+
+.logoutContainer {
+  padding: var(--spacing-md) var(--spacing-md);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.logoutButton {
+  width: 100%;
+  padding: var(--spacing-sm);
+  background: transparent;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-base);
+  transition: all var(--transition-base);
+}
+
+.logoutButton:hover {
+  background: var(--color-danger);
+  color: white;
+}
+
+/* ========================================
+   MOBILE MENU TOGGLE
+   ======================================== */
+
+.mobileMenuButton {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 101;
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: block;
+  }
+}
+
+/* ========================================
+   OVERLAY (Mobile)
+   ======================================== */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .overlay.open {
+    display: block;
+  }
+}
+
+/* ========================================
+   MAIN CONTENT AREA
+   ======================================== */
+
+.mainContent {
+  margin-left: 280px;
+  flex: 1;
+  min-height: 100vh;
+  background: var(--color-gray-50);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+  }
+}
+
+/* ========================================
+   TOP HEADER (with NotificationBell)
+   ======================================== */
+
+.topHeader {
+  background: white;
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: var(--shadow-xs);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  .topHeader {
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-left: 60px; /* Space for hamburger menu */
+  }
+}
+
+/* ========================================
+   PAGE CONTENT
+   ======================================== */
+
+.pageContent {
+  flex: 1;
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pageInner {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .pageContent {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}

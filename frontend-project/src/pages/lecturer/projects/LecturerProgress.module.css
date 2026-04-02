@@ -1,0 +1,541 @@
+/**
+ * LecturerProgress Page Styles
+ * Atlassian Design System
+ * Progress tracking with stats grid and submission table
+ */
+
+/* Page Container */
+.container {
+  min-height: 100%;
+}
+
+/* Header Section */
+.header {
+  margin-bottom: 24px;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  padding: 0;
+  font-family: inherit;
+}
+
+.backButton:hover {
+  text-decoration: underline;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.pageSubtitle {
+  margin: 5px 0 0 0;
+  color: #888;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 1200px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statIconBlue {
+  background: #f0f9ff;
+}
+
+.statIconGreen {
+  background: #f6ffed;
+}
+
+.statIconYellow {
+  background: #fffbe6;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Progress Table */
+.tableContainer {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.tableHeader {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.tableTitle {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.table thead tr th {
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: left;
+  font-weight: 600;
+  min-width: 140px;
+}
+
+.table thead tr th:first-child {
+  border-radius: 10px 0 0 0;
+  min-width: 150px;
+  text-align: left;
+}
+
+.table thead tr th:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+.table thead tr th.centered {
+  text-align: center;
+}
+
+.milestoneHeader {
+  display: block;
+}
+
+.milestoneDate {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.table tbody tr {
+  background: #fafbfc;
+}
+
+.table tbody tr:nth-child(even) {
+  background: white;
+}
+
+.table tbody tr td {
+  padding: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.groupName {
+  display: block;
+  font-weight: 600;
+  color: #333;
+}
+
+.groupMeta {
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+}
+
+.cellCentered {
+  text-align: center;
+  padding: 12px !important;
+}
+
+.submissionCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.submissionDate {
+  font-size: 11px;
+  color: #888;
+}
+
+.gradeBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #f6ffed 0%, #d9f7be 100%);
+  border: 1px solid #b7eb8f;
+  color: #389e0d;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.pendingBadge {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  color: #d48806;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gradeButton {
+  margin-top: 4px;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.emptyCell {
+  color: #ccc;
+  text-align: center;
+}
+
+.emptyText {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.mockButton {
+  font-size: 10px;
+  margin-top: 6px;
+  cursor: pointer;
+  border: 1px dashed #d9d9d9;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #888;
+  font-family: inherit;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.loadingContent {
+  text-align: center;
+  color: #999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Project Selection Grid */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.projectCard {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(102,126,234,0.15);
+  border-color: #667eea;
+}
+
+.projectCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.activeBadge {
+  background: linear-gradient(135deg, #f6ffed 0%, #b7eb8f 100%);
+  color: #389e0d;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.subjectId {
+  font-size: 13px;
+  color: #999;
+}
+
+.projectName {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.projectDescription {
+  color: #777;
+  font-size: 14px;
+  margin: 0 0 16px 0;
+  line-height: 1.5;
+}
+
+.projectFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.milestonesCount {
+  font-size: 13px;
+  color: #888;
+}
+
+.viewButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Empty States */
+.emptyState {
+  background: white;
+  padding: 60px;
+  border-radius: 16px;
+  text-align: center;
+  color: #999;
+}
+
+.emptyEmoji {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.notFoundButton {
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.closeButton {
+  cursor: pointer;
+  color: #999;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroupLast {
+  margin-bottom: 24px;
+}
+
+.formLabel {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.contentDisplay {
+  padding: 14px;
+  background: #f9fafb;
+  border-radius: 10px;
+  font-style: italic;
+  word-break: break-all;
+  border: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #555;
+}
+
+.scoreInput {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #e8e8e8;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+  font-family: inherit;
+}
+
+.scoreInput:focus {
+  border-color: #667eea;
+}
+
+.commentTextarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #e8e8e8;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.commentTextarea:focus {
+  border-color: #667eea;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  padding: 12px 24px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.saveButton {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+}

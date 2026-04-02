@@ -1,0 +1,600 @@
+/* ============================================
+   Premium NotificationBell Styles
+   Modern, animated notification center
+   ============================================ */
+
+/* ============================================
+   CSS Variables
+   ============================================ */
+:root {
+  --notification-primary: #667eea;
+  --notification-success: #10b981;
+  --notification-warning: #f59e0b;
+  --notification-error: #ef4444;
+  --notification-info: #3b82f6;
+  --notification-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  --notification-hover-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   Bell Button
+   ============================================ */
+.bellButton {
+  position: relative;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bellButton:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.bellButton:active {
+  transform: scale(0.95);
+}
+
+.bellIcon {
+  width: 24px;
+  height: 24px;
+  color: #4b5563;
+  transition: color 0.2s;
+}
+
+.bellButton:hover .bellIcon {
+  color: var(--notification-primary);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0 6px;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+  animation: bounceIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.badgePulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   Dropdown Panel
+   ============================================ */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.panel {
+  position: absolute;
+  right: 0;
+  margin-top: 12px;
+  width: 420px;
+  max-width: calc(100vw - 32px);
+  max-height: 640px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--notification-shadow);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.header {
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.markAllButton {
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--notification-primary);
+  border-radius: 8px;
+  color: var(--notification-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.markAllButton:hover:not(:disabled) {
+  background: var(--notification-primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.markAllButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Filter Tabs */
+.filterTabs {
+  display: flex;
+  gap: 8px;
+}
+
+.filterTab {
+  flex: 1;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.filterTab:hover {
+  color: var(--notification-primary);
+  background: rgba(102, 126, 234, 0.06);
+}
+
+.filterTabActive {
+  color: white;
+  background: linear-gradient(135deg, var(--notification-primary), #764ba2);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.filterTabCount {
+  margin-left: 4px;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+/* ============================================
+   Notifications List
+   ============================================ */
+.listContainer {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.listContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.listContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.listContainer::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.listContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Date Group */
+.dateGroup {
+  margin: 8px 0;
+}
+
+.dateGroupHeader {
+  padding: 12px 24px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.dateGroupHeader:hover {
+  color: var(--notification-primary);
+}
+
+.dateGroupCount {
+  padding: 2px 8px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 10px;
+  font-size: 11px;
+  color: var(--notification-primary);
+}
+
+.dateGroupChevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s;
+}
+
+.dateGroupCollapsed .dateGroupChevron {
+  transform: rotate(-90deg);
+}
+
+/* Notification Item */
+.notificationItem {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: all 0.2s;
+  animation: fadeIn 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.notificationItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: transparent;
+  transition: background 0.3s;
+}
+
+.notificationItem:hover {
+  background: rgba(102, 126, 234, 0.02);
+}
+
+.notificationItem:hover::before {
+  background: var(--notification-primary);
+}
+
+.notificationItemUnread {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.06), rgba(118, 75, 162, 0.04));
+}
+
+.notificationItemUnread::before {
+  background: var(--notification-primary);
+}
+
+.notificationContent {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+}
+
+.notificationIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.notificationItem:hover .notificationIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.notificationBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.notificationHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.notificationTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notificationItemUnread .notificationTitle {
+  font-weight: 700;
+}
+
+.unreadDot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, var(--notification-primary), #764ba2);
+  border-radius: 50%;
+  margin-top: 4px;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.notificationMessage {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.notificationTime {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.deleteButton {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.notificationItem:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+/* Empty State */
+.emptyState {
+  padding: 60px 24px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  color: #d1d5db;
+}
+
+.emptyText {
+  font-size: 15px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ============================================
+   Skeleton Loading
+   ============================================ */
+.skeleton {
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.skeletonContent {
+  display: flex;
+  gap: 12px;
+}
+
+.skeletonIcon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    90deg,
+    #f3f4f6 0%,
+    #e5e7eb 50%,
+    #f3f4f6 100%
+  );
+  background-size: 1000px 100%;
+  border-radius: 12px;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonBody {
+  flex: 1;
+}
+
+.skeletonTitle {
+  height: 16px;
+  width: 70%;
+  background: linear-gradient(
+    90deg,
+    #f3f4f6 0%,
+    #e5e7eb 50%,
+    #f3f4f6 100%
+  );
+  background-size: 1000px 100%;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  animation: shimmer 2s infinite;
+}
+
+.skeletonMessage {
+  height: 14px;
+  width: 90%;
+  background: linear-gradient(
+    90deg,
+    #f3f4f6 0%,
+    #e5e7eb 50%,
+    #f3f4f6 100%
+  );
+  background-size: 1000px 100%;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  animation: shimmer 2s infinite 0.1s;
+}
+
+.skeletonTime {
+  height: 12px;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    #f3f4f6 0%,
+    #e5e7eb 50%,
+    #f3f4f6 100%
+  );
+  background-size: 1000px 100%;
+  border-radius: 4px;
+  animation: shimmer 2s infinite 0.2s;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  text-align: center;
+}
+
+.viewAllButton {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--notification-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.viewAllButton:hover {
+  background: rgba(102, 126, 234, 0.06);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 480px) {
+  .panel {
+    width: calc(100vw - 16px);
+    max-height: calc(100vh - 100px);
+  }
+
+  .header {
+    padding: 16px 20px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .notificationItem {
+    padding: 12px 20px;
+  }
+
+  .filterTab {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

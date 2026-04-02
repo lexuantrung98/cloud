@@ -1,0 +1,173 @@
+/**
+ * Classes Page Styles
+ * Atlassian Design System
+ * Head Department - Classes list page
+ */
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+
+.pageHeader {
+  margin-bottom: var(--spacing-xl);
+}
+
+.pageTitle {
+  font-size: var(--font-size-3xl);
+  margin: 0;
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-semibold);
+}
+
+.pageSubtitle {
+  color: var(--color-gray-600);
+  margin: 5px 0 0 0;
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   SEARCH BAR
+   ======================================== */
+
+.searchInput {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-base);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: all var(--transition-fast);
+  margin-bottom: var(--spacing-lg);
+  font-family: var(--font-family-base);
+}
+
+.searchInput:hover {
+  border-color: var(--color-gray-400);
+}
+
+.searchInput:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+/* ========================================
+   TABLE CARD
+   ======================================== */
+
+.tableCard {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.tableHeaderCell {
+  padding: var(--spacing-sm);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  font-size: var(--font-size-base);
+}
+
+.tableHeaderCell.alignCenter {
+  text-align: center;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background var(--transition-fast);
+}
+
+.tableRow:hover {
+  background: var(--color-primary-light);
+}
+
+.tableCell {
+  padding: var(--spacing-sm);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-base);
+}
+
+.tableCell.alignCenter {
+  text-align: center;
+}
+
+.tableCellName {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-900);
+}
+
+/* ========================================
+   BADGES
+   ======================================== */
+
+.codeBadge {
+  padding: 4px 8px;
+  background: var(--color-info-light);
+  color: var(--color-info-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  display: inline-block;
+}
+
+.countBadge {
+  padding: 4px 10px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  display: inline-block;
+}
+
+/* ========================================
+   LOADING & EMPTY STATES
+   ======================================== */
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  color: var(--color-gray-600);
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyStateTitle {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.emptyStateText {
+  font-size: var(--font-size-base);
+}
+
+/* ========================================
+   STATS CARD
+   ======================================== */
+
+.statsCard {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-primary-light);
+  border-radius: var(--radius-sm);
+  border: 1px solid #e0f2fe;
+}
+
+.statsText {
+  color: #0369a1;
+  font-size: var(--font-size-base);
+  margin: 0;
+}
