@@ -19,11 +19,10 @@ builder.Services.AddDbContext<ProjectDbContext>(options =>
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<ProjectCoreService>();
 
-// HttpContextAccessor cho JWT token forwarding
 builder.Services.AddHttpContextAccessor();
 
 // ==========================================
-// 3. JWT AUTHENTICATION (Giống AccountService)
+// 3. JWT AUTHENTICATION
 // ==========================================
 var jwtKey = builder.Configuration["Jwt:Key"];
 var jwtIssuer = builder.Configuration["Jwt:Issuer"];
@@ -52,18 +51,19 @@ builder.Services.AddControllers()
     {
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
         options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
-        options.JsonSerializerOptions.WriteIndented = true; // Pretty print in development
+        options.JsonSerializerOptions.WriteIndented = true;
     });
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // ==========================================
-// 5. CORS (Unified Frontend port 5000)
+// 5. CORS
 // ==========================================
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy => 
-        policy.WithOrigins("http://localhost:5000") // Unified frontend
+    options.AddPolicy("AllowAll", policy =>
+        policy.WithOrigins("http://localhost:5000")
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials());
@@ -71,8 +71,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// ✅ FIX PORT CHO CLOUD (QUAN TRỌNG)
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Urls.Add($"http://0.0.0.0:{port}");
+
 // ==========================================
-// AUTO-MIGRATIONS ON STARTUP (Production/Docker)
+// AUTO-MIGRATIONS
 // ==========================================
 using (var scope = app.Services.CreateScope())
 {
@@ -81,7 +85,7 @@ using (var scope = app.Services.CreateScope())
     {
         var context = services.GetRequiredService<ProjectDbContext>();
         var logger = services.GetRequiredService<ILogger<Program>>();
-        
+
         logger.LogInformation("Starting database migration for ProjectService...");
         context.Database.Migrate();
         logger.LogInformation("Database migration completed successfully.");
@@ -89,9 +93,7 @@ using (var scope = app.Services.CreateScope())
     catch (Exception ex)
     {
         var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogWarning(ex, "Migration failed or already applied. Continuing with application startup...");
-        // Don't throw - let the app continue even if migration fails
-        // This handles cases where tables already exist or partial migrations occurred
+        logger.LogWarning(ex, "Migration failed or already applied. Continuing...");
     }
 }
 
@@ -104,17 +106,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Serve static files from wwwroot (for uploaded milestone files)
 app.UseStaticFiles();
 
 app.UseCors("AllowAll");
 
-app.UseAuthentication(); // QUAN TRỌNG: Phải đặt TRƯỚC UseAuthorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-// Health check endpoint for Docker
+// Health check
 app.MapGet("/health", () => Results.Ok(new { status = "healthy", service = "ProjectService" }));
 
 app.Run();
